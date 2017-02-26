@@ -25,7 +25,10 @@ public class ManageNodeOnSelect : MonoBehaviour
     private void OnSelect()
     {
         var node = this.GetComponent<Renderer>();
-        node.material.color = Color.yellow;
+        var color = node.material.color;
+        var brigherColor = new Color(color.r * 1.25f, color.g * 1.25f, color.b * 1.25f, color.a);
+
+        node.material.color = brigherColor;
 
         if (showingTitle)
         {
